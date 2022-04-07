@@ -1,0 +1,37 @@
+﻿@model ChangeRoleVM
+@{
+    ViewData["Title"] = "ChanegeRole";
+}
+
+
+
+<h2>@Model.Username</h2>
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Rolu Dəyiş</label>
+        <select class="form-control" name="newRole">
+            @foreach (string item in Model.Roles)
+            {
+                if (Model.Role == item)
+                {
+                    <option selected value="@item">@item</option>
+                }
+                else
+                {
+                    <option  value="@item">@item</option>
+                }
+            }
+
+
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Dəyiş</button>
+    <a asp-action="Index" class="btn btn-secondary text-light" >Geri</a>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

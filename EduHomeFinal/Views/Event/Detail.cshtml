@@ -1,0 +1,87 @@
+﻿@model Event
+    <!-- Banner Area Start -->
+    <div class="banner-area-wrapper">
+        <div class="banner-area text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="banner-content-wrapper">
+                            <div class="banner-content">
+                                <h2>TƏDBİR HAQQINDA</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Area End -->
+    <!-- Event Details Start -->
+    <div class="event-details-area blog-area pt-150 pb-140">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="event-details">
+                        <div class="event-details-img">
+                            <img style="width:100%;" src="~/img/event/@Model.Image" alt="event-details">
+                            <div class="event-date">
+                                <h3> <span>@Model.EventDetail.DateTime.ToString("dd/MM/yyyy")</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-details-content">
+                            <h2>@Model.EventDetail.Title</h2>
+                            <ul>
+                                <li><span>Vaxt : </span>@Model.EventDetail.StartTime.ToString("HH:mm") - @Model.EventDetail.EndTime.ToString("HH:mm")</li>
+                                <li><span>necə izləmək olar? : </span>@Model.EventDetail.EventPlace</li>
+                            </ul>
+                            <p>@Model.EventDetail.Description</p>
+                            <p>@Model.EventDetail.SubTitle</p>
+                            <p>@Model.EventDetail.SubTitle2</p>
+                            <div class="speakers-area fix">
+                                <h4>Spikerlər</h4>
+
+
+                              
+                                @foreach (EventSpeaker item in Model.EventSpeaker)
+                                {
+                                    <div class="single-speaker">
+                                        <div class="speaker-img">
+                                            <img style="border-radius:40%;width:150px;height:150px;" src="~/img/event/@item.Speaker.Image" alt="speaker">
+                                        </div>
+                                        <div class="speaker-name">
+                                            <h5>@item.Speaker.SpeakerName</h5>
+                                            <p>@item.Speaker.SpeakerPlace </p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            @await Component.InvokeAsync("ReplyMessage")
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-sidebar right">
+
+
+                        <div class="single-blog-widget mb-50">
+                            <div class="single-blog-banner">
+                                <a id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                                <h2>ən yaxşı<br> təhsil <br> mövzusu</h2>
+                            </div>
+                        </div>
+                        <div class="single-blog-widget mb-50">
+                            <h3>Sonuncular</h3>
+                            @await Component.InvokeAsync("Blog")
+                        </div>
+                        <div class="single-blog-widget">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Event Details End -->

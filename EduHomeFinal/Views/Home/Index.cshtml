@@ -1,0 +1,191 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Background Area Start -->
+<section id="slider-container" class="slider-area three">
+    <div class="slider-owl owl-theme owl-carousel">
+        <!-- Start Slingle Slide -->
+        @foreach (Slider slider in Model.Slider)
+        {
+            <div class="single-slide item" style="background-image:url(../../img/slider/@slider.BGImage )">
+                <div class="slider-content-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="slide-content-wrapper">
+                                    <div class="slide-content">
+                                        <h3>@slider.Title</h3>
+                                        <h2>@slider.SubTitle</h2>
+                                        <p>@slider.Description </p>
+                                        <a class="default-btn" asp-controller="About" asp-action="Index">DAHA ƏTRAFLI</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="slider-img">
+                                    <img src="~/img/slider/@slider.Image" alt="slider">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+
+
+
+    </div>
+</section>
+<!-- Background Area End -->
+<!-- Courses Area Start -->
+<div class="courses-area pt-150 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img style="width:250px;" src="~/img/about/@Model.About.Icon" alt="title">
+                    <h2>KURSLARIMIZDAN</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (Course course in Model.Course)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a asp-route-id="@course.Id" asp-controller="Course" asp-action="Detail">
+                                <img style="height:200px;width:150%;" src="~/img/course/@course.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a asp-route-id="@course.Id" asp-controller="Course" asp-action="Detail">@course.CourseName</a></h3>
+                           
+                            <a class="default-btn" asp-route-id="@course.Id" asp-controller="Course" asp-action="Detail">Daha çox</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+<!-- Courses Area End -->
+<!-- Notice Start -->
+<section class="notice-area two three pt-140 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="notice-right-wrapper mb-25 pb-25">
+                    <h3>Video</h3>
+                    <div class="notice-video">
+                        @await Component.InvokeAsync("Video")
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="notice-left-wrapper">
+                    <h3>ELAN LÖVHƏSİ</h3>
+                    <div class="notice-left">
+                        @await Component.InvokeAsync("NoticeBoard")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Notice End -->
+<!-- About Start -->
+<!--@await Component.InvokeAsync("About")-->
+<!-- About End -->
+<!-- Event Area Start -->
+<div class="event-area three text-center pt-100 pb-115">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title">
+                    <img style="width:250px;" src="~/img/about/@Model.About.Icon" alt="title">
+                    <h2>Tədbİrlərİmİzdən</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (Event even in Model.Event)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-event mb-35">
+                        <div class="event-img">
+                            <a asp-route-id="@even.Id" asp-controller="Event" asp-action="Detail"><img style="height:200px;width:150%;" src="~/img/event/@even.Image" alt="event"></a>
+                            <div class="event-date">
+                                <h3> <span>@even.EventDetail.DateTime.ToString("dd/MM/yyyy")</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-content text-left">
+                            <h4><a asp-route-id="@even.Id" asp-controller="Event" asp-action="Detail">@even.EventName</a></h4>
+                            <ul>
+                                <li><span>vaxt:</span> @even.EventDetail.StartTime.ToString("HH:mm")-@even.EventDetail.EndTime.ToString("HH:mm")</li>
+                                <li><span>ünvan:</span>@even.EventDetail.EventPlace</li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-route-id="@even.Id" asp-controller="Event" asp-action="Detail"> Qoşulun</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+<!-- Event Area End -->
+
+<!-- Blog Area Start -->
+<div class="blog-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-title text-center">
+                    <img style="width:250px;" src="~/img/about/@Model.About.Icon" alt="title">
+                    <h2>Bloqlarımızdan</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (Blog blog in Model.Blog)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-blog">
+                        <div class="blog-img">
+                            <a asp-route-id="@blog.Id" asp-controller="Blog" asp-action="Detail"><img style="height:200px;width:150%;" src="~/img/blog/@blog.Image" alt="blog"></a>
+                            <div class="blog-hover">
+                                <a asp-route-id="@blog.Id" asp-controller="Blog" asp-action="Detail"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-top">
+                                <p>@blog.BlogCreator /  @blog.BlogDetail.CreateTime.ToString("dd/MM/yyyy")  </p>
+                            </div>
+                            <div class="blog-bottom">
+                                <h2><a asp-route-id="@blog.Id" asp-controller="Blog" asp-action="Detail">@blog.BlogDetail.BlogDesciription </a></h2>
+                                <a asp-route-id="@blog.Id" asp-controller="Blog" asp-action="Detail">Daha çox</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+<!-- Blog Area End -->

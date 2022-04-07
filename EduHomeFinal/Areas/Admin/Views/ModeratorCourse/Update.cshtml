@@ -1,0 +1,107 @@
+﻿
+@model Course
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Image</label>
+        <input asp-for="@Model.Photo" class="form-control" aria-descriedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.Photo"></span>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="@Model.CourseName" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseName"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input asp-for="@Model.CourseDescription" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDescription"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">About</label>
+        <input asp-for="@Model.CourseDetail.CourseAbout" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseAbout"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Apply</label>
+        <input asp-for="@Model.CourseDetail.CourseApply" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseApply"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Sertification</label>
+        <input asp-for="@Model.CourseDetail.CourseSertification" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseSertification"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">StartTime</label>
+        <input asp-for="@Model.CourseFeatures.StartTime" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.StartTime"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Duration</label>
+        <input asp-for="@Model.CourseFeatures.Duration" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Duration    "></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">ClassDuration </label>
+        <input asp-for="@Model.CourseFeatures.ClassDuration" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.ClassDuration    "></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">SkillLevel</label>
+        <input asp-for="@Model.CourseFeatures.SkillLevel" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.SkillLevel"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Language</label>
+        <input asp-for="@Model.CourseFeatures.Language" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Language"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">StudentsCount </label>
+        <input asp-for="@Model.CourseFeatures.StudentsCount " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.StudentsCount "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Assesments </label>
+        <input asp-for="@Model.CourseFeatures.Assestment " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Assestment "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">CourseFee </label>
+        <input asp-for="@Model.CourseFeatures.CourseFee " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.CourseFee $ "></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Categories</label>
+        <select multiple class="form-control" name="CourseId">
+            @foreach (Category category in ViewBag.Category)
+            {
+                if (Model.CourseCategories.Any(x => x.CategoryId == category.Id))
+                {
+                    <option selected value="@category.Id">@category.Name</option>
+                }
+                else
+                {
+                    <option value="@category.Id">@category.Name</option>
+
+                }
+
+            }
+
+
+        </select>
+    </div>
+   
+
+    
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

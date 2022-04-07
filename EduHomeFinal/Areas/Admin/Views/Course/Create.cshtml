@@ -1,0 +1,111 @@
+﻿@model Course
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Şəkil</label>
+        <input asp-for="@Model.Photo" class="form-control" aria-descriedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.Photo"></span>
+    </div>
+    <div class="form-group">
+        <label>Ad</label>
+        <input asp-for="@Model.CourseName" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseName"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Təsviri</label>
+        <input asp-for="@Model.CourseDescription" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDescription"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Haqqında</label>
+        <input asp-for="@Model.CourseDetail.CourseAbout" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseAbout"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Müraciət qaydası</label>
+        <input asp-for="@Model.CourseDetail.CourseApply" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseApply"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Sertifikatlaşdırma</label>
+        <input asp-for="@Model.CourseDetail.CourseSertification" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseDetail.CourseSertification"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Başlama Tarixi</label>
+        <input asp-for="@Model.CourseFeatures.StartTime" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.StartTime"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dərs saatı </label>
+        <input asp-for="@Model.CourseFeatures.ClassDuration" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.ClassDuration    "></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kurs Müddəti</label>
+        <input asp-for="@Model.CourseFeatures.Duration" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Duration    "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tədris metodu</label>
+        <input asp-for="@Model.CourseFeatures.SkillLevel" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.SkillLevel"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dil</label>
+        <input asp-for="@Model.CourseFeatures.Language" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Language"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Tələbə sayı </label>
+        <input asp-for="@Model.CourseFeatures.StudentsCount " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.StudentsCount "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Qiymətləndirmə </label>
+        <input asp-for="@Model.CourseFeatures.Assestment " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.Assestment "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Qiymət </label>
+        <input asp-for="@Model.CourseFeatures.CourseFee " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.CourseFeatures.CourseFee $ "></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kateqoriya </label>
+        <select multiple class="form-control" name="CourseId">
+            @foreach (Category item in ViewBag.Category)
+            {
+
+                <option value="@item.Id">@item.Name</option>
+
+            }
+
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Moderator </label>
+        <select multiple class="form-control" name="modeId">
+            @foreach (var item in ViewBag.moderators)
+            {
+
+                <option value="@item.Id">@item.Name</option>
+
+            }
+
+        </select>
+
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-primary" style="margin:20px;">Yarat</button>
+</form>

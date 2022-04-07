@@ -1,0 +1,96 @@
+﻿@model Course
+
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>KURS HAQQINDA</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Blog Start -->
+<div class="courses-details-area blog-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="courses-details">
+                    <div class="courses-details-img">
+                        <img style="width:100%;" src="~/img/course/@Model.Image" alt="courses-details">
+                    </div>
+                    <div class="course-details-content">
+                        <h2>@Model.CourseName</h2>
+                        <p>@Model.CourseDescription </p>
+                        <div class="course-details-left">
+                            <div class="single-course-left">
+                                <h3>Haqqında</h3>
+                                <p>@Model.CourseDetail.CourseAbout</p>
+                            </div>
+                            <div class="single-course-left">
+                                <h3>Müracİət qaydası</h3>
+                                <p>@Model.CourseDetail.CourseApply</p>
+                            </div>
+                            <div class="single-course-left">
+                                <h3>Sertİfİkatlaşdırma</h3>
+                                <p class="margin">@Model.CourseDetail.CourseSertification</p>
+
+                            </div>
+                        </div>
+                        <div class="course-details-right">
+                            <h3>KURSUN DETALLARI</h3>
+                            <ul>
+
+                                <li>Başlama tarİxİ <span>@Model.CourseFeatures.StartTime.ToString("dd/MM/yyyy")</span></li>
+                                <li>Kurs Müddəti <span>@Model.CourseFeatures.Duration</span></li>
+                                <li>Dərs saatı <span>@Model.CourseFeatures.ClassDuration</span></li>
+                                <li>Tədrİs  <span>@Model.CourseFeatures.SkillLevel</span></li>
+                                <li>Dİl <span>@Model.CourseFeatures.Language</span></li>
+                                <li>Tələbə sayı <span>@Model.CourseFeatures.StudentsCount</span></li>
+                                <li>Qİymətləndİrmə <span>@Model.CourseFeatures.Assestment</span></li>
+
+                            </ul>
+                            <h3 class="red">Kursun Qİymətİ $@Model.CourseFeatures.CourseFee</h3>
+                        </div>
+
+
+                    </div>
+                    @await Component.InvokeAsync("ReplyMessage")
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="blog-sidebar right">
+
+                    <div class="single-blog-widget mb-50">
+                        <h3>KATEQORİYALAR</h3>
+                       @await Component.InvokeAsync("Category")
+                    </div>
+                    <div class="single-blog-widget mb-50">
+                        <div class="single-blog-banner">
+                            <a id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                            <h2>ən yaxşı <br> təhSİl<br> mövzusu</h2>
+                        </div>
+                    </div>
+                    <div class="single-blog-widget mb-50">
+                        <h3> Sonuncular</h3>
+                        @await Component.InvokeAsync("Blog")
+                    </div>
+                    <div class="single-blog-widget">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->

@@ -1,0 +1,53 @@
+﻿@model Blog
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Şəkil</label>
+        <input asp-for="@Model.Photo" class="form-control" aria-descriedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.Photo"></span>
+    </div>
+    <div class="form-group">
+        <label>Ad</label>
+        <input asp-for="@Model.BlogCreator" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogCreator"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Təsvir</label>
+        <input asp-for="@Model.BlogDetail.BlogDesciription" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.BlogDesciription"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Başlıq</label>
+        <input asp-for="@Model.BlogDetail.Title" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.Title"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Başlıq2</label>
+        <input asp-for="@Model.BlogDetail.Title2" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.Title2"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Yaranma Vaxtı</label>
+        <input asp-for="@Model.BlogDetail.CreateTime" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.CreateTime"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Haqqında</label>
+        <input asp-for="@Model.BlogDetail.About" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.About"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Başlıq3 </label>
+        <input asp-for="@Model.BlogDetail.SubTitle" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.BlogDetail.SubTitle    "></span>
+    </div>
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary" style="margin:20px;">Yenilə</button>
+</form>
+

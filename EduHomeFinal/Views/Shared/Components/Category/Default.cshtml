@@ -1,0 +1,15 @@
+﻿@model List<Category>
+
+<ul>
+    @foreach (Category item in Model)
+    {
+        
+
+        <li><a asp-action="CourseCategory" asp-route-id="@item.Id">@item.Name</a></li>
+       
+
+    }
+
+</ul>
+
+

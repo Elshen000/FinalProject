@@ -1,0 +1,145 @@
+﻿
+
+@model Teacher
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Şəkil</label>
+        <input asp-for="@Model.Photo" class="form-control" aria-descriedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.Photo"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Ad</label>
+        <input asp-for="@Model.Name" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Vəzifə</label>
+        <input asp-for="@Model.TeacherPosition.Position" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherPosition.Position"></span>
+    </div>
+
+    @*<div class="form-group">
+        <label for="exampleInputEmail1">Təsviri</label>
+        <input asp-for="@Model.TeacherDetail.Description" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Description"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Dərəcə</label>
+        <input asp-for="@Model.TeacherDetail.Degree" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Degree"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Təcrübə</label>
+        <input asp-for="@Model.TeacherDetail.Experience" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Experience"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Hobbi</label>
+        <input asp-for="@Model.TeacherDetail.Hobbies" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Hobbies"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">İxtisas</label>
+        <input asp-for="@Model.TeacherDetail.Faculty" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Faculty"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Telefon</label>
+        <input asp-for="@Model.TeacherDetail.PhoneNumber" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.PhoneNumber"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input asp-for="@Model.TeacherDetail.Email" class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Email"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Skype </label>
+        <input asp-for="@Model.TeacherDetail.Skype " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherDetail.Skype "></span>
+    </div>*@
+    <div class="form-group">
+        <label for="exampleInputEmail1">Facebook </label>
+        <input asp-for="@Model.TeacherSocialMedia.Facebook " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherSocialMedia.Facebook "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Pinterest </label>
+        <input asp-for="@Model.TeacherSocialMedia.Pinterest " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherSocialMedia.Pinterest "></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Vimeo </label>
+        <input asp-for="@Model.TeacherSocialMedia.Vimeo " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherSocialMedia.Vimeo"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Twitter </label>
+        <input asp-for="@Model.TeacherSocialMedia.Twitter " class="form-control" aria-describedby="emailHelp">
+        <span class="text-danger" asp-validation-for="@Model.TeacherSocialMedia.Twitter "></span>
+    </div>
+    @*<div>
+        <label for="exampleInputEmail1">Bacarıqlar</label>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 1 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName1 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName1"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel1 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel1 "></span>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 2 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName2 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName2"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel2 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel2 "></span>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 3 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName3 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName3"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel3 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel3 "></span>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 4 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName4 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName4"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel4 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel4 "></span>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 5 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName5 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName5"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel5 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel5 "></span>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1"> 6 </label>
+            <input asp-for="@Model.TeacherSkill.SkillName6 " class="form-control" aria-describedby="emailHelp">
+            <span class="btn-danger" asp-validation-for="@Model.TeacherSkill.SkillName6"></span>
+            <input asp-for="@Model.TeacherSkill.SkillLevel6 " class="form-control" aria-describedby="emailHelp">
+            <span class="text-danger" asp-validation-for="@Model.TeacherSkill.SkillLevel6 "></span>
+        </div>
+    </div>*@
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary" style="margin:20px;">Yarat</button>
+</form>
+
+
+
+
+

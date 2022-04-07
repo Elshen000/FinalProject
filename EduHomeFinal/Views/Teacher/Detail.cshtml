@@ -1,0 +1,142 @@
+﻿
+
+
+@model TeacherVM
+    <!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>MÜƏLLİM HAQQINDA</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Teacher Start -->
+<div class="teacher-details-area pt-150 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                <div class="teacher-details-img">
+                    <img src="~/img/teacher/@Model.Teacher.Image" alt="teacher">
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="teacher-details-content ml-50">
+                    <h2>@Model.Teacher.Name</h2>
+                    <h5>@Model.TeacherPosition.Position</h5>
+                    <h4>Haqqında</h4>
+                    <p>@Model.TeacherDetail.Description</p>
+
+                    <ul>
+                        <li><span>dərəcə: </span>@Model.TeacherDetail.Degree</li>
+                        <li><span>təcrübə: </span>@Model.TeacherDetail.Experience</li>
+                        <li><span>hobbİlər: </span>@Model.TeacherDetail.Hobbies</li>
+                        <li><span>İxtİsas: </span>@Model.TeacherDetail.Faculty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="teacher-contact">
+                    <h4>Əlaqə Məlumatları</h4>
+                    <p><span>E-mail : </span>@Model.TeacherDetail.Email</p>
+                    <p><span>Telefon : </span>@Model.TeacherDetail.PhoneNumber</p>
+                    <p><span>skype : </span>@Model.TeacherDetail.Skype</p>
+                    <ul>
+                        <li><a href="@Model.TeacherSocialMedia.Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="@Model.TeacherSocialMedia.Pinterest"><i class="zmdi zmdi-pinterest"></i></a></li>
+                        <li><a href="@Model.TeacherSocialMedia.Vimeo"><i class="zmdi zmdi-vimeo"></i></a></li>
+                        <li><a href="@Model.TeacherSocialMedia.Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-8">
+                <div class="skill-area">
+                    <h4>Bacarıqlar</h4>
+                </div>
+
+                <div class="skill-wrapper">
+                    <div class="row">
+
+                     
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName1</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel1% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel1 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName2</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel2% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel2 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName3</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel3% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel3 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName4</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel4% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel4 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName5</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel5% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel5 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="skill-bar-item">
+                                <span>@Model.TeacherSkills.SkillName6</span>
+                                <div class="progress">
+                                    <div data-wow-delay="1.2s" data-wow-duration="1.5s" style="width: @Model.TeacherSkills.SkillLevel6% ; visibility: visible; animation-duration: 1.5s; animation-delay: 1.2s; animation-name: fadeInLeft;" data-progress="50%" class="progress-bar wow fadeInLeft">
+                                        <span class="text-top">@Model.TeacherSkills.SkillLevel6 %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div> <!-- Teacher End -->}
+
+

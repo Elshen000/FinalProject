@@ -1,0 +1,47 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!-- Blog Start -->
+<div class="blog-details-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-details">
+                    <div class="blog-details-img">
+                        <img style="width:100%;" src="~/img/blog/@Model.Image" alt="blog-details">
+                    </div>
+                    <div class="blog-details-content">
+                        <h2> @Model.BlogDetail.BlogDesciription</h2>
+                        <h6>@Model.BlogCreator  /  @Model.BlogDetail.CreateTime </h6>
+                        <p>@Model.BlogDetail.About </p>
+                        <p>@Model.BlogDetail.Title</p>
+                        <p class="quote">@Model.BlogDetail.Title2</p>
+                        <p>@Model.BlogDetail.SubTitle</p>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        @await Component.InvokeAsync("ReplyMessage")
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-sidebar right">
+
+
+                    <div class="single-blog-widget mb-47">
+                        <div class="single-blog-banner">
+                            <a id="blog"><img src="~/img/blog/blog-img.jpg" alt="blog"></a>
+                            <h2>ən yaxşı<br> təhsİl<br> mövzusu</h2>
+                        </div>
+                          
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->

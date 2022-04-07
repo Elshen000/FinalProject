@@ -1,0 +1,75 @@
+﻿@model List<Event>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>TƏDBİRLƏR</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+<!-- Event Start -->
+<div class="event-area three text-center pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-title" style="text-align:left;">
+                    <h3>Tədbİr axtarın</h3>
+                </div>
+                <div class="course-form">
+                    <form id="search" action="#">
+                        <input id="eventsearch" type="search" placeholder="Axtarış..."  />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="searchevent">
+            @foreach (Event even in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-event mb-60">
+                        <div class="event-img">
+                            <a asp-controller="Event" asp-action="Detail" asp-route-id="@even.Id">
+                                <img style="height:200px;width:100%;" src="~/img/event/@even.Image" alt="event">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                            <div class="event-date">
+                                <h3> <span>@even.EventDetail.DateTime.ToString("dd/MM/yy")</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-content text-left">
+                            <h4><a asp-controller="Event" asp-action="Detail" asp-route-id="@even.Id">@even.EventName</a></h4>
+                            <ul>
+                                <li><span>time:</span> @even.EventDetail.StartTime.ToString("HH-mm") - @even.EventDetail.EndTime.ToString("HH-mm")</li>
+                                <li><span>ünvan: </span>@even.EventDetail.EventPlace </li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="Event" asp-action="Detail" asp-route-id="@even.Id">Qoşulun</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+        
+    </div>
+</div>
+<!-- Event End -->
+

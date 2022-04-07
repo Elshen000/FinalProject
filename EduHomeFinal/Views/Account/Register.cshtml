@@ -1,0 +1,51 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Register start -->
+<div class="register-area pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>Qeydiyyat</h2>
+                            <span>ZƏHMƏT OLMASA MƏLUMATLARINIZI QEYD EDİN.</span>
+                        </div>
+                        <div class="login-form">
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <form class="pt-3" method="post">
+                                <label for="exampleInputEmail1">Ad</label>
+                                <input asp-for="@Model.Name"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.Name"></span>
+                                <label for="exampleInputEmail1">Soyad</label>
+                                <input asp-for="@Model.Surname"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.Surname"></span>
+                                <label for="exampleInputEmail1">İstifadəçi Adı</label>
+                                <input asp-for="@Model.Username"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.Username"></span>
+                                <label for="exampleInputEmail1">Email</label>
+                                <input asp-for="@Model.Email"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.Email"></span>
+                                <label for="exampleInputEmail1">Parol</label>
+                                <input asp-for="@Model.Password"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.Password"></span>
+                                <label for="exampleInputEmail1">Parol Təkrarı</label>
+                                <input asp-for="@Model.CheckPassword"   class="form-control form-control-lg border-left-0">
+                                <span class="text-danger" asp-validation-for="@Model.CheckPassword"></span>
+
+                                <div class="button-box">
+                                    
+                                    <button type="submit" class="default-btn">Qeydiyyatdan Keç</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register end -->

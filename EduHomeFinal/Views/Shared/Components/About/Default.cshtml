@@ -1,0 +1,21 @@
+﻿@model About
+<div class="about-area pt-145 pb-155">
+    <div class="container">
+        <div class="row" style="">
+            <div class="col-md-6 col-sm-6">
+                <div class="about-content">
+
+                    <h2><span>@Model.Title</span></h2>
+                    <p>@Model.Description</p>
+                    <p class="hidden-sm">@Model.Information</p>
+                    <a class="default-btn" asp-controller="Course" asp-action="Index">Kurslarımızla tanış olun. </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="about-img">
+                    <img src="~/img/about/@Model.Image" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

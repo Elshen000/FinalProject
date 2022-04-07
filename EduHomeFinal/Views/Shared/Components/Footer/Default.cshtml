@@ -1,0 +1,90 @@
+﻿@model HomeVM
+  <!-- Subscribe Start -->
+<div class="subscribe-area pt-60 pb-70">
+    <div class="container">
+        <div class="row" id="ssbb">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="subscribe-content section-title text-center">
+                    <h2>YenİLİKLƏR üçün abunə olun!</h2>
+                    <p id="Pnim" style="color:red!important"></p>
+                </div>
+                <div class="newsletter-form mc_embed_signup">
+                    <form  >
+                        <div id="mc_embed_signup_scroll" class="mc-form">
+                            <input type="email" asp-for="@Model.Subscribe.Email" name="EMAIL" class="email" id="mce-EMAIL" placeholder="E-mail addresinizi daxil edin.." required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div class="mc-news" aria-hidden="true">
+
+
+                            </div>
+                            <button  id="mc-embedded-subscribe2" class="default-btn" type="button" name="subscribe"><span>Abunə olmaq</span></button>
+
+                        </div>
+
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Subscribe End -->
+<!-- Footer Start -->
+<footer class="footer-area two ins">
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="footer-logo text-center mb-70">
+                        <a asp-controller="Home" asp-action="Index"><img style="width:1000px;" src="~/img/logo/@Model.Bio.Logo" alt="itbrainsacademy"></a>
+                    </div>
+                </div>
+               
+               
+                @*<div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="single-widget instagram">
+                        <h3>instagram</h3>
+                        <a  class="mb-15 mr-15">
+                            <img src="~/img/footer/footer1.jpg" alt="instagrm">
+                            <i class="fa fa-link"></i>
+                        </a>
+                        <a  class="mb-15 gap">
+                            <img src="~/img/footer/footer2.jpg" alt="instagrm">
+                            <i class="fa fa-link"></i>
+                        </a>
+                        <a  class="mr-15">
+                            <img src="~/img/footer/footer3.jpg" alt="instagrm">
+                            <i class="fa fa-link"></i>
+                        </a>
+                        <a >
+                            <img src="~/img/footer/footer4.jpg" alt="instagrm">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="copyright text-left">
+                        <p class="text-left">Copyright © <a asp-controller="Home" asp-action="Creator" target="_blank">Elshen Guliyev</a> 2022. All Right Reserved By Elshen Guliyev.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="footer-social text-right">
+                        <ul>
+                            <li><a href="@Model.Bio.Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="@Model.Bio.Instagram"><i class="zmdi zmdi-instagram"></i></a></li>
+                            <li><a href="@Model.Bio.Youtube"><i class="zmdi zmdi-youtube"></i></a></li>
+                            <li><a href="@Model.Bio.Linkedin"><i class="zmdi zmdi-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
